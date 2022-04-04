@@ -1,0 +1,17 @@
+---
+apiVersion: 1.0.0
+metadata:
+  generateName: mcte-
+components:
+  -
+    type: chePlugin
+    id: ms-python/python/latest
+  -
+    type: dockerimage
+    alias: mcte
+    image: 503372020484.dkr.ecr.us-gov-west-1.amazonaws.com/mcte/che-mcte-base:v0.1.0
+    memoryLimit: 512Mi
+    mountSources: true
+    volumes:
+      - name: venv
+        containerPath: /home/user/.venv
